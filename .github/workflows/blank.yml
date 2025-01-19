@@ -23,11 +23,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Runs a single command using the runners shell
-      - name: Saying Hello to ${{ inputs.name }}
+      - name: Saying Hello
         run: |
-          name=${{ inputs.name }}
-          if [[ -z $name ]]; then
-            name="fox"
-          fi
+          name="${{ inputs.name }}:-fox"
+          # if [[ -z $name ]]; then
+          #   name="fox"
+          # fi
           echo Hello, $name!
 
