@@ -25,9 +25,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Saying Hello
         run: |
-          name=${"${{ inputs.name }}:-fox"}
-          # if [[ -z $name ]]; then
-          #   name="fox"
-          # fi
+          name=${{ inputs.name }}
+          name=${name:-fox}
           echo Hello, $name!
 
