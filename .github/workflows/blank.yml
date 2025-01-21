@@ -23,6 +23,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Runs a single command using the runners shell
+      - name: Run In Main
+        if: ${{ github.ref == 'refs/heads/main' }} 
+        run: echo "Running in main"
+        
       - name: Saying Hello
         run: |
           name=${{ inputs.name }}
